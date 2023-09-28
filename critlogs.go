@@ -72,7 +72,7 @@ func main() {
 	for _, line := range lines {
 		row := parseToRow(line)
 		if err != nil {
-			log.Fatal(err)
+			log.Println(err)
 			continue
 		}
 		rows = append(rows, row)
