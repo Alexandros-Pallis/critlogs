@@ -67,7 +67,6 @@ func main() {
 	lines, err := readLines(inputLogFile)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(1)
 	}
 	for _, line := range lines {
 		row := parseToRow(line)
@@ -83,7 +82,6 @@ func main() {
 	output, err := os.Create(outputLogFile)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(1)
 	}
 	for _, row := range rows {
 		output.WriteString(fmt.Sprintf("processing time: %s,\nrequest: %s\n\n", row.TargetProcessingTime, row.Request))
